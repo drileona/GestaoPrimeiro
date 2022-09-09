@@ -17,13 +17,6 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });
 */
-Route::get('/', function () {
-    return 'Primeira';
-});
-
-Route::get('/sobre-nos', function () {
-   return 'Sobre';
-});
-Route::get('/contato', function () {
-   return 'Contato';
-});
+Route::get('/', [\App\Http\Controllers\PrincipalController::class, 'principal']);
+Route::get('/sobre-nos', [\App\Http\Controllers\PrincipalSobre::class, 'sobrenos']);
+Route::get('/conato', [\App\Http\Controllers\PrincipalContato::class, 'contato']);
